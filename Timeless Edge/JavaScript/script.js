@@ -1,26 +1,4 @@
 // ---------- Menu Toggle ----------
-/*const toggleBtn = document.querySelector('.menu-toggle');
-const nav = document.querySelector('.navbar');
-
-toggleBtn.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    toggleBtn.setAttribute('aria-expanded', isOpen);
-});
-
-nav.addEventListener("click", (e) => {
-    if (e.target.closest("a")) {
-        nav.classList.remove("open");
-        toggleBtn.setAttribute("aria-expanded", "false");
-    }
-});
-
-document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-        nav.classList.remove("open");
-        toggleBtn.setAttribute("aria-expanded", "false");
-    }
-});
-*/
 const toggleBtn = document.querySelector(".menu-toggle");
 const nav = document.querySelector(".navbar");
 
@@ -103,7 +81,7 @@ const lbCaption = document.getElementById("lb-caption");
 if (galleryEl && lightbox && lbImg && lbCaption) {
   let current = 0;
 
-  // Build the photo buttons (placed before the video so the video stays last)
+  
   const video = galleryEl.querySelector("video");
   galleryPhotos.forEach((photo, i) => {
     const button = document.createElement("button");
