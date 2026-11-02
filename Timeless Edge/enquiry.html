@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Enquiries | Timeless Edge</title>
+        <meta name="description" content="Ask Timeless Edge about products, bulk orders, pricing or collaborations.">
+        <link rel="icon" type="image/jpg" href="Images/favicon.jpg">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body>
+        <header>
+            <img src="Images/indexBackGround.jpg" alt="Timeless Edge logo" style="width:85px; height:75px;">
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+                &#9776;
+            </button>
+            <nav class="navbar" id="main-nav">
+                <a class="box" href="index.html">Home</a>
+                <a class="box" href="about.html">About</a>
+                <a class="box" href="services.html">Services</a>
+                <a class="box" href="gallery.html">Gallery</a>
+                <a class="box active" href="enquiry.html" aria-current="page">Enquiry</a>
+                <a class="box" href="contact.html">Contact</a>
+            </nav>
+        </header>
+
+        <main class="contact-container">
+            <h1>Enquiries</h1>
+            <p>Interested in a product or a bulk order? Tell us what you need.</p>
+
+            <section class="contact-form-section">
+                <form id="enquiry-form"
+                      action="https://formspree.io/f/YOUR_FORM_ID"
+                      method="POST"
+                      data-fallback-email="you@example.com"
+                      novalidate>
+
+                    <div class="field">
+                        <label for="eq-name">Full name</label>
+                        <input type="text" id="eq-name" name="name" required minlength="2" maxlength="60"
+                               pattern="[A-Za-z\u00C0-\u017F' \-]{2,60}" autocomplete="name">
+                        <span class="error" id="eq-name-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="eq-email">Email address</label>
+                        <input type="email" id="eq-email" name="email" required maxlength="100" autocomplete="email">
+                        <span class="error" id="eq-email-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="eq-phone">Phone number</label>
+                        <input type="tel" id="eq-phone" name="phone" required
+                               pattern="(\+27|0)[0-9]{9}" placeholder="e.g. 0670703550" autocomplete="tel">
+                        <span class="error" id="eq-phone-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="eq-type">Type of enquiry</label>
+                        <select id="eq-type" name="enquiry_type" required>
+                            <option value="">Select one...</option>
+                            <option>Product availability</option>
+                            <option>Pricing</option>
+                            <option>Bulk or custom order</option>
+                            <option>Delivery</option>
+                            <option>Collaboration</option>
+                        </select>
+                        <span class="error" id="eq-enquiry_type-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="eq-product">Product of interest</label>
+                        <select id="eq-product" name="product" required>
+                            <option value="">Select one...</option>
+                            <option>Summer Collection</option>
+                            <option>Winter Wear</option>
+                            <option>Accessories</option>
+                            <option>Other</option>
+                        </select>
+                        <span class="error" id="eq-product-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="field">
+                        <label for="eq-qty">Quantity</label>
+                        <input type="number" id="eq-qty" name="quantity" required min="1" max="500" step="1" value="1">
+                        <span class="error" id="eq-quantity-error" aria-live="polite"></span>
+                    </div>
+
+                    <fieldset class="field">
+                        <legend>Preferred way to reply</legend>
+                        <div class="choice-row">
+                            <label><input type="radio" name="contact_method" value="Email" required> Email</label>
+                            <label><input type="radio" name="contact_method" value="Phone call"> Phone call</label>
+                            <label><input type="radio" name="contact_method" value="WhatsApp"> WhatsApp</label>
+                        </div>
+                        <span class="error" id="eq-contact_method-error" aria-live="polite"></span>
+                    </fieldset>
+
+                    <div class="field">
+                        <label for="eq-details">Details</label>
+                        <textarea id="eq-details" name="details" rows="5" required minlength="10" maxlength="800"></textarea>
+                        <span class="char-count" id="eq-count">0 / 800</span>
+                        <span class="error" id="eq-details-error" aria-live="polite"></span>
+                    </div>
+
+                    <div class="field">
+                        <label class="choice-row">
+                            <input type="checkbox" name="consent" required>
+                            I agree to be contacted about this enquiry.
+                        </label>
+                        <span class="error" id="eq-consent-error" aria-live="polite"></span>
+                    </div>
+
+                    <div style="display:none" aria-hidden="true">
+                        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send enquiry</button>
+                    <p class="form-status" id="eq-status" aria-live="polite"></p>
+                </form>
+            </section>
+        </main>
+
+        <footer>&copy;ST10519250</footer>
+        <script src="JavaScript/script.js" defer></script>
+    </body>
+</html>

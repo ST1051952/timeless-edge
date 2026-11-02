@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/jpg" href="Images/favicon.jpg">
+        <title>Our Services</title>
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+    <body id="body3">
+        <header>
+            <img src="Images/indexBackGround.jpg"style="width:85px; height:75px;">
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+                &#9776;
+            </button>
+            <nav class="navbar">
+                <a class="box" href="index.html" title="Go to home page">Home</a>
+                <a class="box" href="about.html" title="Learn about us">About</a>
+                <a class="box active" href="services.html" title="Our services" aria-current="page">Services</a>
+                <a class="box" href="gallery.html" title="View our gallery">Gallery</a>
+                <a class="box" href="enquiry.html" title="Send an enquiry">Enquiry</a>
+                <a class="box" href="contact.html" title="Our contacts">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <div class="controls">
+                <label for="service-search" class="sr-only">Search services</label>
+                <input type="search" id="service-search" placeholder="Search collections...">
+
+                <label for="service-category" class="sr-only">Filter by category</label>
+                    <select id="service-category">
+                        <option value="all">All categories</option>
+                        <option value="summer">Summer</option>
+                        <option value="winter">Winter</option>
+                        <option value="accessories">Accessories</option>
+                    </select>
+
+                <label for="service-sort" class="sr-only">Sort by</label>
+                    <select id="service-sort">
+                        <option value="default">Sort: Default</option>
+                        <option value="name-asc">Name A to Z</option>
+                        <option value="name-desc">Name Z to A</option>
+                        <option value="price-asc">Price: low to high</option>
+                        <option value="price-desc">Price: high to low</option>
+                    </select>
+                </div>
+
+               <p id="service-count" class="results-count" aria-live="polite"></p>
+            <div class="services-section">
+                <div class="card" data-category="summer" data-price="250">
+                    <img src="Images/abt us background.jpg" alt="Summer collection">
+                    <h3>Summer Collection</h3>
+                    <p>Light, breathable fabrics designed for comfort and style under the African sun</p>
+                    <p class="price">R250</p>
+                </div>
+                <div class="card" data-category="winter" data-price="600">
+                    <img src="Images/picture1.jpg" alt="Winter wear">
+                    <h3>Winter Wear</h3>
+                    <p>Stay warm with our premium hoodies, tracksuits and jackets</p>
+                    <p class="price">R600</p>
+                </div>
+                <div class="card" data-category="accessories" data-price="150">
+                    <img src="Images/picture3.jpg" alt="Accessories">
+                    <h3>Accessories</h3>
+                    <p>Complete your looks with our durable backpacks and caps that define street culture</p>
+                    <p class="price">R150</p>
+                </div>
+            </div>
+
+            <p id="no-results" class="no-results" hidden>No matches found. Try a different search.</p>
+            
+        </main>
+        <footer>&copy;ST10519250</footer>
+        <script src="JavaScript/script.js" defer></script>
+    </body>
+</html>

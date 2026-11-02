@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Us</title>
+        <link rel="icon" type="image/jpg" href="Images/favicon.jpg">
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    </head>
+    <body>
+        <header>
+            <img src="Images/indexBackGround.jpg"style="width:85px; height:75px;">
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-nav">
+                &#9776;
+            </button>
+            
+            <nav class="navbar">
+                <a class="box" href="index.html" title="Go to home page">Home</a>
+                <a class="box active" href="about.html" title="Learn about us" aria-current="page">About</a>
+                <a class="box" href="services.html" title="Our services">Services</a>
+                <a class="box" href="gallery.html" title="View our gallery">Gallery</a>
+                <a class="box" href="enquiry.html" title="Send an enquiry">Enquiry</a>
+                <a class="box" href="contact.html" title="Our contacts">Contact</a>
+            </nav>
+        </header>
+         <main>
+            <div class="tabs" role="tablist" aria-label="About page sections">
+                <button class="tab-btn active" role="tab" id="tab-about" aria-controls="about" aria-selected="true" data-tab="about">About</button>
+                <button class="tab-btn" role="tab" id="tab-map" aria-controls="map-panel" aria-selected="false" data-tab="map-panel">Find Us</button>
+            </div>
+
+            <section id="about" class="tab-panel active" role="tabpanel" aria-labelledby="tab-about">
+                <div class="about-section">
+                    <div class="container2">
+                        <p>
+                            We are more than just a brand, we represent the streets of South Africa.
+                            Born in SOWETO, our designs move with the stylish rythm of our townships,and
+                            the creativity of our locals, our berand celebrates unapologetic spirit of 
+                            street calture.
+                        </p>
+                    </div>
+                    <div class="container2">
+                        <p>
+                            Our mission is simple: to design clothing that speeks for people, by the people.
+                            We are driven by the belief that ture streetwear was born fron riginality. Every
+                            design is our own creation:- crafted in South Africa, following the rules of our 
+                            streets, and made to stand tall on the global stage. By blending local energy with 
+                            bold innovation, we're not just following trends, we're setting them. Taking the 
+                            rythm of our culture and sharing it with the world.
+                        </p>
+                    </div>
+                    <div class="container2">
+                        <p>
+                            We believe fashion is a voice. It tells stories of identity, struggle, and triumph.
+                            That's why we collaborate with local artists, skaters, musicians, and creators:-
+                            buildinga movement that goes beyond clothing.
+
+                        </p>
+                    </div>
+                    <div class="container2">
+                        <p>
+                            Whether you're walking downtown Jozi, vibing in Cape Town, or repping your hood
+                            anywhere in Mzansi, our gear is made to move with you. This is not just fashion.
+                            This is culture. This is South African streetwear.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section  id="map-panel" class="tab-panel" role="tabpanel" aria-labelledby="tab-map">
+                <div id="map"></div>
+            </section>
+         </main>
+         <footer>&copy;ST10519250</footer>
+         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
+         <script src="JavaScript/script.js" defer></script>
+    </body>
+</html>

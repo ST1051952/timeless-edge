@@ -1,0 +1,4 @@
+User-agent:*
+Allow: /
+
+Sitemap:https://timelessegde.clo.com/sitemap.xml
