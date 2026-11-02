@@ -1,12 +1,4 @@
 /*--- CSS Reset & Global Styles ---*/
-/**{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-}
-    */
 * {
     margin: 0;
     padding: 0;
@@ -43,36 +35,7 @@ header{
     top: 40%;
     left: 33%;
     color: rgb(18, 3, 3);
-}/*
-.navbar{
-
-    display: flex;
-    flex-wrap: wrap;
-    position:relative;
-    align-items: center;
-    background-color:#acb8d0;
-    width: 90%;
-    max-width: 600px;
-    justify-content:center;
-    padding: 15px 30px;
-    gap: 30px;
-    font-weight: 600;
-    font-size: 15px;
-    background-color: cover;
-    margin: auto;
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.navbar a{
-    text-decoration: none;
-    cursor: pointer;
-}
-.navbar a:hover{
-    text-decoration: underline;
-}
-.navbar a:active{
-    font-size: 1.1em;
-}*/
 .menu-toggle{
     display: none;
     background: none;
@@ -82,29 +45,33 @@ header{
     cursor: pointer;
     padding: 8px 12px;
 }
-/*
-@media (max-width:700px){
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
-    }
-    .menu-toggle{
-        display: block;
-    }
-    .navbar{
-        display: none;
+
+.hero { padding: 0 20px; }
+
+.container,
+.container2 { max-width: 100%; }
+
+.image-container { height: 250px; }
+
+@media (max-width: 900px) {
+    .hero {
         flex-direction: column;
-        width: 100%;
-        text-align: center;
-        gap: 14px;
+        margin-top: 40px;
+        gap: 24px;
     }
-    .navbar.open{
-        display: flex;
+
+    .column {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .container {
+        width: 100%;
+        height: auto;
+        min-height: 250px;
     }
 }
-*/
+
 .hero{
     display: flex;
     justify-content: center;
@@ -138,32 +105,7 @@ header{
     height: 100%;
     border-radius: 10px;
     object-fit: cover;
-}/*
-.container2{
-    width: 400px;
-    height: 250px;
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    padding: 30px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: 0.3s;
 }
-.container2 :hover{
-    background: linear-gradient(to right, #ab97ad, rgb(90, 99, 119));
-    color: white;
-}
-.about-section{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 120px;
-}*/
 .about-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -606,31 +548,8 @@ fieldset.field legend {
     font-weight: bold;
     text-decoration: underline;
     text-underline-offset: 6px;
-}/*
-@media (max-width: 900px){
-    .navbar{
-        width: 90%;
-        gap: 10px;
-        padding: 10px 15px;
-        flex-wrap: wrap;
-    }
+}
 
-    .navbar a{
-        font-size: 14px;
-    }
-}*/
-/*
-@media (max-width: 500px){
-    .navbar{
-        margin: 70px;
-        gap: 5px;
-    }
-
-    .navbar a{
-        font-size: 12px;
-    }
-}*/
-/* ---------- Design tokens ---------- */
 :root {
     --bg: #fafaf8;
     --surface: #ffffff;
@@ -664,7 +583,7 @@ h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
 
 ::selection { background: var(--accent); color: var(--text); }
 
-/* ---------- Header and nav ---------- */
+
 header {
     position: sticky;
     top: 0;
@@ -687,7 +606,7 @@ header.scrolled {
 
 header img { height: 48px; width: auto; }
 
-/* ---------- Buttons ---------- */
+
 .submit-btn,
 .enquire-link {
     display: inline-block;
@@ -711,7 +630,7 @@ header img { height: 48px; width: auto; }
 .submit-btn:active,
 .enquire-link:active { transform: translateY(0); }
 
-/* ---------- Cards and panels ---------- */
+
 .card,
 .contact-form-section,
 .container2 {
@@ -726,7 +645,7 @@ header img { height: 48px; width: auto; }
 .container2:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
-    background: var(--surface);   /* cancels the old gradient hover */
+    background: var(--surface);   
 }
 
 .card:hover h3,
@@ -736,7 +655,7 @@ header img { height: 48px; width: auto; }
 .card:hover img { transform: scale(1.04); }
 .card { overflow: hidden; }
 
-/* ---------- Form polish ---------- */
+
 .field input,
 .field select,
 .field textarea {
@@ -752,7 +671,7 @@ header img { height: 48px; width: auto; }
     box-shadow: 0 0 0 4px rgba(172, 184, 208, 0.45);
 }
 
-/* ---------- Scroll reveal ---------- */
+
 .reveal {
     opacity: 0;
     transform: translateY(24px);
@@ -764,17 +683,17 @@ header img { height: 48px; width: auto; }
     transform: none;
 }
 
-/* ---------- Links ---------- */
+
 a { color: var(--accent-dark); }
 
-/* ---------- Respect people who turn motion off ---------- */
+
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     * { transition: none !important; animation: none !important; }
     .reveal { opacity: 1; transform: none; }
 }
 
-/**/
+
 header { flex-wrap: wrap; }
 
 .navbar {
@@ -813,6 +732,24 @@ header { flex-wrap: wrap; }
     .navbar.open { display: flex; }
 }
 
+header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+header > img { justify-self: start; }
+
+.navbar { justify-content: center; }
+
+
+@media (max-width: 700px) {
+    header {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
 
 
 

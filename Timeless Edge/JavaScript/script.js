@@ -95,7 +95,7 @@ if (galleryEl && lightbox && lbImg && lbCaption) {
     img.loading = "lazy";
 
     button.append(img);
-    galleryEl.insertBefore(button, video);   // if there's no video, this appends
+    galleryEl.insertBefore(button, video);   
   });
 
   function showImage(index) {
@@ -106,7 +106,7 @@ if (galleryEl && lightbox && lbImg && lbCaption) {
     lbCaption.textContent = `${photo.alt} (${current + 1} of ${galleryPhotos.length})`;
   }
 
-  // One click listener for all photos (event delegation)
+
   galleryEl.addEventListener("click", (e) => {
     const item = e.target.closest(".gallery-item");
     if (!item) return;
@@ -177,7 +177,7 @@ if (contactForm) {
     return text === "";
   }
 
-  // Only the visible fields (skips the hidden spam trap)
+  
   const fields = Array.from(contactForm.querySelectorAll(".field input, .field select, .field textarea"));
 
   fields.forEach(field => {
@@ -191,7 +191,7 @@ if (contactForm) {
     cfCount.textContent = `${cfMessage.value.length} / ${cfMessage.maxLength}`;
   });
 
-  // Backup: build an email the visitor can send from their own email app
+
   function mailtoLink(data) {
     const subject = `[${data.get("type")}] Message from ${data.get("name")}`;
     const body = [
@@ -254,7 +254,7 @@ if (contactForm) {
   });
 }
 
-// ---------- Services: search, filter, sort ----------
+// ---------- Services----------
 const searchInput = document.getElementById("service-search");
 const categorySelect = document.getElementById("service-category");
 const sortSelect = document.getElementById("service-sort");
@@ -270,14 +270,13 @@ if (searchInput && categorySelect && sortSelect && serviceList) {
     const category = categorySelect.value;
     const sort = sortSelect.value;
 
-    // 1. Filter by search text and category
+    
     const visible = cards.filter(card => {
       const matchesText = card.textContent.toLowerCase().includes(query);
       const matchesCategory = category === "all" || card.dataset.category === category;
       return matchesText && matchesCategory;
     });
 
-    // 2. Sort the matches
     const title = card => card.querySelector("h3").textContent;
     const price = card => Number(card.dataset.price);
 
@@ -287,13 +286,13 @@ if (searchInput && categorySelect && sortSelect && serviceList) {
         case "name-desc":  return title(b).localeCompare(title(a));
         case "price-asc":  return price(a) - price(b);
         case "price-desc": return price(b) - price(a);
-        default:           return cards.indexOf(a) - cards.indexOf(b); // original order
+        default:           return cards.indexOf(a) - cards.indexOf(b); 
       }
     });
 
     // 3. Update the page
     cards.forEach(card => card.hidden = !visible.includes(card));
-    visible.forEach(card => serviceList.append(card));   // re-appending reorders them
+    visible.forEach(card => serviceList.append(card));   
 
     if (countEl) countEl.textContent = `${visible.length} of ${cards.length} shown`;
     if (noResults) noResults.hidden = visible.length > 0;
@@ -316,7 +315,7 @@ if (enquiryForm) {
   const sendBtn = enquiryForm.querySelector(".submit-btn");
   const fallbackEmail = enquiryForm.dataset.fallbackEmail;
 
-  // Pre-select a product from a link like enquiry.html?product=winter
+  
   const productNames = {
     summer: "Summer Collection",
     winter: "Winter Wear",
@@ -361,7 +360,7 @@ if (enquiryForm) {
     let text = "";
 
     if (field.type === "radio") {
-      // A radio group is valid when any option in it is chosen
+      
       const chosen = enquiryForm.querySelector(`input[name="${field.name}"]:checked`);
       if (!chosen) text = messages[field.name].valueMissing;
     } else if (!field.validity.valid) {
@@ -376,7 +375,7 @@ if (enquiryForm) {
     return text === "";
   }
 
-  // Visible fields only (skips the hidden spam trap)
+  
   const fields = Array.from(enquiryForm.querySelectorAll(".field input, .field select, .field textarea"));
 
   fields.forEach(field => {
@@ -410,7 +409,7 @@ if (enquiryForm) {
   enquiryForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Trim text-like fields so spaces alone don't count as input
+    
     fields.forEach(f => {
       if (["text", "email", "tel"].includes(f.type) || f.tagName === "TEXTAREA") {
         f.value = f.value.trim();
@@ -455,7 +454,7 @@ if (enquiryForm) {
     }
   });
 }
-// ---------- Polish: header shadow + scroll reveal ----------
+
 const siteHeader = document.querySelector("header");
 
 if (siteHeader) {
@@ -471,14 +470,14 @@ if ("IntersectionObserver" in window) {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);   // animate once
+        revealObserver.unobserve(entry.target);   
       }
     });
   }, { threshold: 0.15 });
 
   revealEls.forEach((el, i) => {
     el.classList.add("reveal");
-    el.style.transitionDelay = `${(i % 4) * 80}ms`;   // gentle stagger
+    el.style.transitionDelay = `${(i % 4) * 80}ms`;  
     revealObserver.observe(el);
   });
 }
